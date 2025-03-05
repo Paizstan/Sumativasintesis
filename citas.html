@@ -72,8 +72,9 @@
               <option value="laboratorio">Laboratorio</option>
               <option value="vacunación">Vacunación</option>
               <option value="odontología">Odontología</option>
-              <option value="estética/corte de pelo">Estética/Corte de pelo</option>
-
+              <option value="estética/corte de pelo">
+                Estética/Corte de pelo
+              </option>
             </select>
             <div class="invalid-feedback" id="servicioError"></div>
           </div>
@@ -111,26 +112,32 @@
           </div>
           <!-- Raza de la mascota (opcional) -->
           <div class="mb-3">
-            <label for="raza" class="form-label">Raza de la Mascota (opcional)</label>
+            <label for="raza" class="form-label"
+              >Raza de la Mascota (opcional)</label
+            >
             <input type="text" class="form-control" id="raza" />
           </div>
           <!-- Edad de la mascota (opcional) -->
           <div class="mb-3">
-            <label for="edad" class="form-label">Edad de la Mascota (opcional)</label>
+            <label for="edad" class="form-label"
+              >Edad de la Mascota (opcional)</label
+            >
             <input type="number" class="form-control" id="edad" min="0" />
           </div>
           <!-- Teléfono alternativo (opcional) -->
           <div class="mb-3">
-            <label for="telefonoAlternativo" class="form-label">Teléfono Alternativo (opcional)</label>
+            <label for="telefonoAlternativo" class="form-label"
+              >Teléfono Alternativo (opcional)</label
+            >
             <input type="tel" class="form-control" id="telefonoAlternativo" />
           </div>
-         
+
           <!-- Notas adicionales -->
           <div class="mb-3">
             <label for="notas" class="form-label">Notas Adicionales</label>
             <textarea class="form-control" id="notas" rows="3"></textarea>
           </div>
-          
+
           <!-- Botón de agendar cita -->
           <button type="submit" class="btn btn-primary mt-3">Agendar</button>
         </form>

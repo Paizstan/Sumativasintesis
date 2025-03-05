@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (!tipoMascota.value) {
       valid = false;
-      tipoMascotaError.textContent = "Por favor, seleccione un tipo de mascota.";
+      tipoMascotaError.textContent =
+        "Por favor, seleccione un tipo de mascota.";
       tipoMascota.classList.add("is-invalid");
     } else {
       tipoMascotaError.textContent = "";
