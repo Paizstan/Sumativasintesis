@@ -13,6 +13,30 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Estilos para los modales */
+      .modal-header {
+        background-color: #007bff;
+        color: white;
+      }
+      .modal-content {
+        border-radius: 10px;
+      }
+      .modal-body {
+        background-color: #f8f9fa;
+      }
+      .modal-footer {
+        background-color: #f8f9fa;
+      }
+
+      /* Estilos para los botones en dispositivos móviles */
+      @media (max-width: 576px) {
+        .container .btn {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Menú de navegación -->
@@ -93,7 +117,7 @@
     >
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header bg-success text-white">
+          <div class="modal-header">
             <h5 class="modal-title" id="registerModalLabel">Crear Cuenta</h5>
             <button
               type="button"
@@ -141,7 +165,7 @@
                   >Mínimo 6 caracteres.</small
                 >
               </div>
-              <button type="submit" class="btn btn-success w-100 fw-bold">
+              <button type="submit" class="btn btn-primary w-100 fw-bold">
                 Registrarse
               </button>
             </form>
@@ -160,7 +184,7 @@
     >
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header bg-primary text-white">
+          <div class="modal-header">
             <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
             <button
               type="button"
