@@ -194,6 +194,9 @@
             alert(
               "Pago con tarjeta realizado con éxito. ¡Gracias por tu compra!"
             );
+            localStorage.removeItem("carrito"); // Vaciar el carrito
+            carrito = [];
+            actualizarCarrito();
             window.location.href = "tienda.html"; // Redirigir a la tienda
           });
 
