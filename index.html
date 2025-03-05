@@ -456,6 +456,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         const navbarCollapse = document.querySelector(".navbar-collapse");
         const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        const logoutButton = document.getElementById("logoutButton");
 
         navLinks.forEach((link) => {
           link.addEventListener("click", function () {
@@ -463,6 +464,12 @@
               navbarCollapse.classList.remove("show");
             }
           });
+        });
+
+        logoutButton.addEventListener("click", function () {
+          if (window.innerWidth < 992) {
+            navbarCollapse.classList.remove("show");
+          }
         });
       });
     </script>
