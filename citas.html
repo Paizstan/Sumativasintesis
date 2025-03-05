@@ -75,11 +75,13 @@
               <option value="estética/corte de pelo">Estética/Corte de pelo</option>
 
             </select>
+            <div class="invalid-feedback" id="servicioError"></div>
           </div>
           <!-- Fecha -->
           <div class="mb-3">
             <label for="fecha" class="form-label">Fecha</label>
             <input type="date" class="form-control" id="fecha" required />
+            <div class="invalid-feedback" id="fechaError"></div>
           </div>
           <!-- Hora -->
           <div class="mb-3">
@@ -94,6 +96,7 @@
               <option value="16:00">04:00 PM</option>
               <option value="17:00">05:00 PM</option>
             </select>
+            <div class="invalid-feedback" id="horaError"></div>
           </div>
           <!-- Tipo de mascota -->
           <div class="mb-3">
@@ -104,6 +107,7 @@
               <option value="gato">Gato</option>
               <option value="otro">Otro</option>
             </select>
+            <div class="invalid-feedback" id="tipoMascotaError"></div>
           </div>
           <!-- Raza de la mascota (opcional) -->
           <div class="mb-3">
