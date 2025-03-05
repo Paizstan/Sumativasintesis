@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetCare - Clínica Veterinaria</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><i class="fas fa-paw"></i> PetCare</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="citasLink" href="citas.html"
+                >Agendar Cita</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="tiendaLink" href="tienda.html">Tienda</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-outline-light" id="logoutButton">
+                Cerrar Sesión
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="hero-section" id="inicio">
+      <div class="hero-content">
+        <h1>Cuidado Profesional para tus Mascotas</h1>
+        <p>24 horas de servicio de emergencia</p>
+      </div>
+    </header>
+    <!-- Botones de Registro e Inicio de Sesión -->
+    <div class="container text-center my-4">
+      <button
+        class="btn btn-outline-success px-4 py-2 fw-bold"
+        data-bs-toggle="modal"
+        data-bs-target="#registerModal"
+        id="registerButton"
+      >
+        <i class="fas fa-user-plus me-2"></i> Registrarse
+      </button>
+      <button
+        class="btn btn-outline-primary px-4 py-2 fw-bold"
+        data-bs-toggle="modal"
+        data-bs-target="#loginModal"
+        id="loginButton"
+      >
+        <i class="fas fa-sign-in-alt me-2"></i> Iniciar Sesión
+      </button>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div
+      class="modal fade"
+      id="registerModal"
+      tabindex="-1"
+      aria-labelledby="registerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="registerModalLabel">Crear Cuenta</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="registerName" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="registerName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="registerEmail" class="form-label"
+                  >Correo Electrónico</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="registerEmail"
+                  required
+                />
+                <small class="text-danger d-none" id="emailError"
+                  >Este correo ya está registrado.</small
+                >
+              </div>
+              <div class="mb-3">
+                <label for="registerPassword" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="registerPassword"
+                  required
+                />
+                <small id="passwordHelp" class="form-text text-muted"
+                  >Mínimo 6 caracteres.</small
+                >
+              </div>
+              <button type="submit" class="btn btn-success w-100 fw-bold">
+                Registrarse
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Inicio de Sesión -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label"
+                  >Correo Electrónico</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPassword"
+                  required
+                />
+                <small class="text-danger d-none" id="loginError"
+                  >Correo o contraseña incorrectos.</small
+                >
+              </div>
+              <button type="submit" class="btn btn-primary w-100 fw-bold">
+                Iniciar Sesión
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enlazar el archivo JavaScript externo -->
+    <script src="scripts.js"></script>
+
+    <!-- Cargar FontAwesome para los íconos desde una URL alternativa -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Sección Servicios -->
+    <section class="servicios bg-light py-5" id="servicios">
+      <div class="container">
+        <h2 class="text-center mb-5">Nuestros Servicios</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-syringe fa-3x text-primary"></i>
+                <h3>Vacunación</h3>
+                <p>Programa completo de vacunación para todas las edades.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-bath fa-3x text-primary"></i>
+                <h3>Baño para Mascotas</h3>
+                <p>
+                  Baños con productos especializados para el cuidado y salud de
+                  su mascota.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-cut fa-3x text-primary"></i>
+                <h3>Estética y Corte de Pelo</h3>
+                <p>
+                  Servicio de peluquería para mantener a su mascota limpia y con
+                  un look impecable.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nuevos servicios -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-home fa-3x text-primary"></i>
+                <h3>Guardería para Mascotas</h3>
+                <p>Cuidado y atención durante el día en un ambiente seguro.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-dumbbell fa-3x text-primary"></i>
+                <h3>Rehabilitación y Fisioterapia</h3>
+                <p>
+                  Ejercicios y terapias para mejorar la movilidad de su mascota.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-tooth fa-3x text-primary"></i>
+                <h3>Odontología Veterinaria</h3>
+                <p>
+                  Servicio de limpieza dental y tratamiento de enfermedades
+                  bucales.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-bone fa-3x text-primary"></i>
+                <h3>Alimentos y Nutrición</h3>
+                <p>Venta de alimentos y asesoría en dietas balanceadas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-shield-virus fa-3x text-primary"></i>
+                <h3>Desparasitación</h3>
+                <p>Prevención y control de parásitos internos y externos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-microchip fa-3x text-primary"></i>
+                <h3>Microchip y Registro</h3>
+                <p>Identificación con microchip para mayor seguridad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonios bg-light py-5" id="testimonios">
+      <div class="container">
+        <h2 class="text-center mb-5">Nuestros clientes opinan:</h2>
+        <div
+          id="carouselTestimonios"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <!-- Testimonio 1 -->
+            <div class="carousel-item active">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img
+                  src="https://media.istockphoto.com/id/2056137204/photo/selfie-portrait-of-young-asian-woman-with-her-beagle-dog-in-the-park-in-summer-adorable-pet.jpg?s=612x612&w=0&k=20&c=7Wm3JXGKCbdsapqE4gzTtIyCieXPm0rxiDEsPh9G41k="
+                  class="rounded-circle mb-3"
+                  alt="Cliente 1"
+                />
+                <h4>Laura Gómez</h4>
+                <p>
+                  <strong>Excelente servicio veterinario.</strong> Mi gato fue
+                  atendido con mucho amor y dedicación. ¡Recomiendo totalmente
+                  esta clínica!
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div class="carousel-item">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img
+                  src="https://media.istockphoto.com/id/1317523051/photo/young-woman-takes-selfie-with-her-dog.jpg?s=612x612&w=0&k=20&c=2No93m_ZD6dfMa_LunQ6msJMalgm4154Srsy52yGeko="
+                  class="rounded-circle mb-3"
+                  alt="Cliente 2"
+                />
+                <h4>José Martínez</h4>
+                <p>
+                  <strong>El mejor cuidado para mi perro.</strong> Siempre que
+                  vengo, mi mascota recibe la mejor atención y cariño.
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div class="carousel-item">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img
+                  src="https://media.istockphoto.com/id/1436156774/photo/attractive-african-american-girl-is-taking-selfie-with-cute-dog-resting-in-city-park-cuddling.jpg?s=612x612&w=0&k=20&c=SVQ4hfOE2T0LuwPos71V4KcFprDYmXTLdQFz8EirkI8="
+                  class="rounded-circle mb-3"
+                  alt="Cliente 3"
+                />
+                <h4>Karen Rico</h4>
+                <p>
+                  <strong>Preciosa clínica veterinaria y peluquería.</strong>
+                  ¡Mi pastor alemán es amado y bien tratado aquí!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles del carrusel -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselTestimonios"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselTestimonios"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4" id="contacto">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4><i class="fas fa-map-marker-alt"></i> Ubicación</h4>
+            <p>Reubicación 1, pol.6, casa#21</p>
+          </div>
+          <div class="col-md-4">
+            <h4><i class="fas fa-phone"></i> Contacto</h4>
+            <p>Tel: 7796-7607</p>
+            <p>Email: petcare@gmail.com</p>
+          </div>
+          <div class="col-md-4">
+            <h4>Redes Sociales</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
