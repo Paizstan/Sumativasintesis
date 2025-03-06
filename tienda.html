@@ -1,157 +1,266 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda de Accesorios - PetCare</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .producto {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            background-color: #fff;
-            margin-bottom: 20px;
-            transition: transform 0.2s;
-        }
-        .producto:hover {
-            transform: scale(1.05);
-        }
-        .producto img {
-            width: 100%;
-            max-height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+      body {
+        background-color: #f8f9fa;
+      }
+      .producto {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        background-color: #fff;
+        margin-bottom: 20px;
+        transition: transform 0.2s;
+      }
+      .producto:hover {
+        transform: scale(1.05);
+      }
+      .producto img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
     </style>
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">🐾 PetCare</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="tienda.html">Tienda</a></li>
-                </ul>
-            </div>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><i class="fas fa-paw"></i> PetCare</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="citas.html">Agendar Cita</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Tienda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carrito.html">Carrito</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <section class="container mt-5">
-        <h2 class="text-center mb-4">Tienda de Accesorios para Mascotas 🛍️</h2>
+    <section class="container mt-5 pt-5">
+      <h2 class="text-center mb-4">Tienda de Accesorios para Mascotas 🛍️</h2>
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="producto">
-                    <img src="https://tottoco.vtexassets.com/arquivos/ids/549021/PDCLAJ1005-241-4DOXL_1.jpg?v=638468559263700000" alt="Collar ajustable">
-                    <h4>Collar ajustable</h4>
-                    <p>Collar de seguridad para tu mascota.</p>
-                    <p><strong>$10.00</strong></p>
-                    <button class="btn btn-primary agregar-carrito" data-nombre="Collar ajustable" data-precio="10">Añadir al carrito</button>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="producto">
-                    <img src="https://aeromall.com.sv/cdn/shop/files/AMA0008-cama-para-mascota-banana-2.jpg?v=1734981524&width=1946" alt="Cama para mascotas">
-                    <h4>Cama para mascotas</h4>
-                    <p>Suave y cómoda para un buen descanso.</p>
-                    <p><strong>$25.00</strong></p>
-                    <button class="btn btn-primary agregar-carrito" data-nombre="Cama para mascotas" data-precio="25">Añadir al carrito</button>
-                </div>
-            </div>
-            
-            
-            <div class="col-md-4">
-                <div class="producto">
-                    <img src="https://oechsle.vteximg.com.br/arquivos/ids/16992495-998-998/image-23b9a2c443594ff6966e8b123b0c728b.jpg?v=638377150431270000" alt="Juguete interactivo para mascotas">
-                    <h4>Juguete interactivo</h4>
-                    <p>Ideal para mantener a tu mascota activa y entretenida.</p>
-                    <p><strong>$15.00</strong></p>
-                    <button class="btn btn-primary agregar-carrito" data-nombre="Juguete interactivo" data-precio="15">Añadir al carrito</button>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="producto">
-                    <img src="https://walmartsv.vtexassets.com/arquivos/ids/595251/86599_01.jpg?v=638665124386070000" alt="Comida para mascotas">
-                    <h4>Comida para mascotas</h4>
-                    <p>Nutritiva y deliciosa para tu amigo peludo.</p>
-                    <p><strong>$40.00</strong></p>
-                    <button class="btn btn-primary agregar-carrito" data-nombre="Comida para mascotas" data-precio="40">Añadir al carrito</button>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="producto">
-                    <img src="https://m.media-amazon.com/images/I/71oAoLl14EL.jpg" alt="Collar para mascotas">
-                    <h4>Collar para mascotas</h4>
-                    <p>Comodidad y estilo para tu mascota.</p>
-                    <p><strong>$10.00</strong></p>
-                    <button class="btn btn-primary agregar-carrito" data-nombre="Collar para mascotas" data-precio="10">Añadir al carrito</button>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="producto">
-                    <img src="https://m.media-amazon.com/images/I/81Tu7uyux-L._AC_UF1000,1000_QL80_.jpg" alt="Bolsa de accesorios para mascotas">
-                    <h4>Bolsa de accesorios</h4>
-                    <p>Perfecta para llevar los accesorios de tu mascota.</p>
-                    <p><strong>$18.00</strong></p>
-                    <button class="btn btn-primary agregar-carrito" data-nombre="Bolsa de accesorios" data-precio="18">Añadir al carrito</button>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="producto">
-                    <img src="https://m.media-amazon.com/images/I/710wErq7GnL.jpg" alt="Paseador para mascotas">
-                    <h4>Paseador para mascotas</h4>
-                    <p>Haz que tus paseos sean más cómodos y seguros.</p>
-                    <p><strong>$22.00</strong></p>
-                    <button class="btn btn-primary agregar-carrito" data-nombre="Paseador para mascotas" data-precio="22">Añadir al carrito</button>
-                </div>
-            </div>
-            
-
-            <div class="col-md-4">
-                <div class="producto">
-                    <img src="https://petzone.com.py/v1/wp-content/uploads/2022/01/MORDEDOR-1.jpeg" alt="Juguete mordedor">
-                    <h4>Juguete mordedor</h4>
-                    <p>Perfecto para la diversión de tu mascota.</p>
-                    <p><strong>$8.00</strong></p>
-                    <button class="btn btn-primary agregar-carrito" data-nombre="Juguete mordedor" data-precio="8">Añadir al carrito</button>
-                </div>
-            </div>
+      <div class="row" id="productos">
+        <div class="col-md-4">
+          <div class="producto">
+            <img
+              src="https://tottoco.vtexassets.com/arquivos/ids/549021/PDCLAJ1005-241-4DOXL_1.jpg?v=638468559263700000"
+              alt="Collar ajustable"
+            />
+            <h4>Collar ajustable</h4>
+            <p>Collar de seguridad para tu mascota.</p>
+            <p><strong>$10.00</strong></p>
+            <button
+              class="btn btn-primary agregar-carrito"
+              data-nombre="Collar ajustable"
+              data-precio="10"
+            >
+              Añadir al carrito
+            </button>
+          </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="producto">
+            <img
+              src="https://aeromall.com.sv/cdn/shop/files/AMA0008-cama-para-mascota-banana-2.jpg?v=1734981524&width=1946"
+              alt="Cama para mascotas"
+            />
+            <h4>Cama para mascotas</h4>
+            <p>Suave y cómoda para un buen descanso.</p>
+            <p><strong>$25.00</strong></p>
+            <button
+              class="btn btn-primary agregar-carrito"
+              data-nombre="Cama para mascotas"
+              data-precio="25"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="producto">
+            <img
+              src="https://oechsle.vteximg.com.br/arquivos/ids/16992495-998-998/image-23b9a2c443594ff6966e8b123b0c728b.jpg?v=638377150431270000"
+              alt="Juguete interactivo para mascotas"
+            />
+            <h4>Juguete interactivo</h4>
+            <p>Ideal para mantener a tu mascota activa y entretenida.</p>
+            <p><strong>$15.00</strong></p>
+            <button
+              class="btn btn-primary agregar-carrito"
+              data-nombre="Juguete interactivo"
+              data-precio="15"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="producto">
+            <img
+              src="https://walmartsv.vtexassets.com/arquivos/ids/595251/86599_01.jpg?v=638665124386070000"
+              alt="Comida para mascotas"
+            />
+            <h4>Comida para mascotas</h4>
+            <p>Nutritiva y deliciosa para tu amigo peludo.</p>
+            <p><strong>$40.00</strong></p>
+            <button
+              class="btn btn-primary agregar-carrito"
+              data-nombre="Comida para mascotas"
+              data-precio="40"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="producto">
+            <img
+              src="https://m.media-amazon.com/images/I/71oAoLl14EL.jpg"
+              alt="Collar para mascotas"
+            />
+            <h4>Collar para mascotas</h4>
+            <p>Comodidad y estilo para tu mascota.</p>
+            <p><strong>$10.00</strong></p>
+            <button
+              class="btn btn-primary agregar-carrito"
+              data-nombre="Collar para mascotas"
+              data-precio="10"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="producto">
+            <img
+              src="https://m.media-amazon.com/images/I/81Tu7uyux-L._AC_UF1000,1000_QL80_.jpg"
+              alt="Bolsa de accesorios para mascotas"
+            />
+            <h4>Bolsa de accesorios</h4>
+            <p>Perfecta para llevar los accesorios de tu mascota.</p>
+            <p><strong>$18.00</strong></p>
+            <button
+              class="btn btn-primary agregar-carrito"
+              data-nombre="Bolsa de accesorios"
+              data-precio="18"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="producto">
+            <img
+              src="https://m.media-amazon.com/images/I/710wErq7GnL.jpg"
+              alt="Paseador para mascotas"
+            />
+            <h4>Paseador para mascotas</h4>
+            <p>Haz que tus paseos sean más cómodos y seguros.</p>
+            <p><strong>$22.00</strong></p>
+            <button
+              class="btn btn-primary agregar-carrito"
+              data-nombre="Paseador para mascotas"
+              data-precio="22"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="producto">
+            <img
+              src="https://petzone.com.py/v1/wp-content/uploads/2022/01/MORDEDOR-1.jpeg"
+              alt="Juguete mordedor"
+            />
+            <h4>Juguete mordedor</h4>
+            <p>Perfecto para la diversión de tu mascota.</p>
+            <p><strong>$8.00</strong></p>
+            <button
+              class="btn btn-primary agregar-carrito"
+              data-nombre="Juguete mordedor"
+              data-precio="8"
+            >
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".agregar-carrito").forEach((boton) => {
-                boton.addEventListener("click", function () {
-                    const nombre = this.getAttribute("data-nombre");
-                    const precio = parseFloat(this.getAttribute("data-precio"));
-                    
-                    // Obtener carrito de localStorage
-                    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-                    carrito.push({ nombre, precio });
-                    localStorage.setItem("carrito", JSON.stringify(carrito));
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".agregar-carrito").forEach((boton) => {
+          boton.addEventListener("click", function () {
+            const nombre = this.getAttribute("data-nombre");
+            const precio = parseFloat(this.getAttribute("data-precio"));
 
-                    // Redirigir al carrito
-                    window.location.href = "carrito.html";
-                });
-            });
+            // Obtener carrito de localStorage
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            carrito.push({ nombre, precio });
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+            // Redirigir al carrito
+            window.location.href = "carrito.html";
+          });
         });
+
+        // Solucionar el problema del menú hamburguesa
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+
+        navbarToggler.addEventListener("click", function () {
+          navbarCollapse.classList.toggle("show");
+        });
+
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarCollapse.classList.remove("show");
+            }
+          });
+        });
+      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
