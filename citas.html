@@ -310,6 +310,12 @@
               }
             );
         });
+
+        // Resetear el modal cuando se cierra
+        resumenModal._element.addEventListener("hidden.bs.modal", function () {
+          citaForm.reset();
+          citaForm.classList.remove("was-validated");
+        });
       });
     </script>
     <script
