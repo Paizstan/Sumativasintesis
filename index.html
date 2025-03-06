@@ -478,6 +478,8 @@
         const navbarCollapse = document.querySelector(".navbar-collapse");
         const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
         const logoutButton = document.getElementById("logoutButton");
+        const registerForm = document.getElementById("registerForm");
+        const loginForm = document.getElementById("loginForm");
 
         navLinks.forEach((link) => {
           link.addEventListener("click", function () {
@@ -491,6 +493,21 @@
           if (window.innerWidth < 992) {
             navbarCollapse.classList.remove("show");
           }
+          localStorage.removeItem("userEmail");
+        });
+
+        registerForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("registerEmail").value;
+          localStorage.setItem("userEmail", email);
+          // ...existing code for registration...
+        });
+
+        loginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("loginEmail").value;
+          localStorage.setItem("userEmail", email);
+          // ...existing code for login...
         });
       });
 
