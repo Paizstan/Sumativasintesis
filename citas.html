@@ -300,16 +300,15 @@
             .then(
               function (response) {
                 console.log("SUCCESS!", response.status, response.text);
+                // Redirigir al formulario de citas
+                resumenModal.hide();
+                citaForm.reset();
+                citaForm.classList.remove("was-validated");
               },
               function (error) {
                 console.log("FAILED...", error);
               }
             );
-
-          // Redirigir al formulario de citas
-          resumenModal.hide();
-          citaForm.reset();
-          citaForm.classList.remove("was-validated");
         });
       });
     </script>
