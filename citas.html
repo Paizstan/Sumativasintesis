@@ -216,7 +216,12 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script>
+      (function () {
+        emailjs.init("ZVZQ1UkXEcFkb4xGH");
+      })();
+
       document.addEventListener("DOMContentLoaded", function () {
         const citaForm = document.getElementById("citaForm");
         const resumenModal = new bootstrap.Modal(
@@ -276,11 +281,17 @@
           ).textContent;
           const notas = document.getElementById("resumenNotas").textContent;
 
-          // Crear el cuerpo del correo
-          const correoCuerpo = `Servicio: ${servicio}%0D%0AFecha: ${fecha}%0D%0AHora: ${hora}%0D%0ATipo de Mascota: ${tipoMascota}%0D%0ARaza: ${raza}%0D%0AEdad: ${edad}%0D%0ATeléfono Alternativo: ${telefonoAlternativo}%0D%0ANotas Adicionales: ${notas}`;
-
-          // Enviar el correo
-          window.location.href = `mailto:tu-correo@gmail.com?subject=Resumen de Cita&body=${correoCuerpo}`;
+          // Enviar el correo usando EmailJS
+          emailjs.send("service_id", "template_id", {
+            servicio: servicio,
+            fecha: fecha,
+            hora: hora,
+            tipoMascota: tipoMascota,
+            raza: raza,
+            edad: edad,
+            telefonoAlternativo: telefonoAlternativo,
+            notas: notas,
+          });
 
           // Redirigir al formulario de citas
           resumenModal.hide();
