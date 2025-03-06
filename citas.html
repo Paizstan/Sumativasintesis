@@ -284,6 +284,12 @@
           // Obtener el correo electrónico del usuario registrado
           const emailUsuario = localStorage.getItem("userEmail");
 
+          // Verificar si el correo electrónico del usuario está disponible
+          if (!emailUsuario) {
+            alert("No se encontró el correo electrónico del usuario.");
+            return;
+          }
+
           // Enviar el correo usando EmailJS
           emailjs
             .send("service_mkzisug", "template_m0v6yw7", {
