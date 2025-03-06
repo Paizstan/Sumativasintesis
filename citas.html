@@ -282,7 +282,7 @@
           const notas = document.getElementById("resumenNotas").textContent;
 
           // Obtener el correo electrónico del usuario registrado
-          const emailUsuario = document.getElementById("loginEmail").value;
+          const emailUsuario = localStorage.getItem("userEmail");
 
           // Enviar el correo usando EmailJS
           emailjs
